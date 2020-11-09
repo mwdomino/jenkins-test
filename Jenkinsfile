@@ -23,7 +23,7 @@ pipeline {
                 docker stop nginx
                 docker rm nginx
                 docker run -d --rm nginx
-        ENDSSH'
+ENDSSH'
         '''
           }
         }
