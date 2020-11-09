@@ -18,8 +18,21 @@ pipeline {
       steps {
         script {
           sshagent(credentials : ['matt-mbp-ssh-key']) {
-            sh "echo pwd"
-            sh "ssh -tt root@172.99.75.160 -o StrictHostKeyChecking=no touch /root/i_wuz_here"
+            sh '''
+              ssh -t -t root@172.99.75.160 'bash -s << 'ENDSSH'
+                docker stop nginx
+                docker rm nginx
+                docker run -d --rm nginx
+        ENDSSH'
+        ''''
+          # ssh to opsbox
+          # docker stop opapp
+          # docker rm opapp
+          # git clone
+          # docker build opapp
+          # docker run opapp
+#            sh "echo pwd"
+#            sh "ssh -tt root@172.99.75.160 -o StrictHostKeyChecking=no touch /root/i_wuz_here"
           }
         }
       }
