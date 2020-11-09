@@ -19,10 +19,7 @@ pipeline {
         script {
           sshagent(credentials : ['matt-mbp-ssh-key']) {
             sh "echo pwd"
-            sh """ssh -tt root@172.99.75.16 -o StrictHostKeyChecking=no << EOF
-            touch /root/i_wuz_here
-            exit
-            EOF"""
+            sh "ssh -tt root@172.99.75.16 -o StrictHostKeyChecking=no -c 'touch /root/i_wuz_here'
           }
         }
       }
