@@ -25,14 +25,6 @@ pipeline {
                 docker run -d --rm nginx
         ENDSSH'
         '''
-          # ssh to opsbox
-          # docker stop opapp
-          # docker rm opapp
-          # git clone
-          # docker build opapp
-          # docker run opapp
-#            sh "echo pwd"
-#            sh "ssh -tt root@172.99.75.160 -o StrictHostKeyChecking=no touch /root/i_wuz_here"
           }
         }
       }
