@@ -24,7 +24,7 @@ pipeline {
                 docker rm nginx
                 docker run -d --rm nginx
         ENDSSH'
-        ''''
+        '''
           # ssh to opsbox
           # docker stop opapp
           # docker rm opapp
